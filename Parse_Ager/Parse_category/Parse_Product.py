@@ -68,7 +68,7 @@ def params_block(soup):
         if data:
             data_params.append({
                 'Name': data[0],
-                'Param': data[1]
+                'Option': data[1]
             })
         else:
             continue
