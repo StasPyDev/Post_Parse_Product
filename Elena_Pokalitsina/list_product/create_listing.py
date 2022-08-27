@@ -1,4 +1,4 @@
-from INFO import product_info
+from Elena_Pokalitsina.INFO import product_info
 
 
 # Загрузка товару на сайт(не варіації товару)
@@ -35,5 +35,4 @@ def new_listing(api, type, info, number, category_info):
             }]
     }
     r = api.post('products', data).json()
-    print(r)
     return r

@@ -28,13 +28,13 @@ def options_to_product(group_id):
     for file in files:
         if file.get('Group_id') == group_id:
             for number in file.get("Params"):
-                if number.get("Name") == 'Размер' or number.get("Name") == 'Розмір':
+                if number.get("Name") == 'Размер':
                     if number.get('Option') is None:
                         continue
                     else:
                         if number.get('Option') not in data_size:
                             data_size.append(number.get('Option'))
-                elif number.get("Name") == 'Цвет' or number.get("Name") == 'Колір':
+                elif number.get("Name") == 'Цвет':
                     if number.get('Option') is None:
                         continue
                     else:

@@ -1,8 +1,8 @@
 import json
 
-from INFO import product_info
-from list_product import create_listing
-from variable import info_to_var
+from Elena_Pokalitsina.INFO import product_info
+from Elena_Pokalitsina.list_product import create_listing
+from Elena_Pokalitsina.variable import info_to_var
 
 
 # До загрузка варіацій для товару

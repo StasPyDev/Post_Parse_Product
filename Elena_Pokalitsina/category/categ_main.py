@@ -1,7 +1,7 @@
-from category.categ_selenium import get_name_category
-from category.get_category_requests import start_parse
-from category.get_parent_id import get_id
-from category.post_category import post_category
+from Elena_Pokalitsina.category.categ_selenium import get_name_category
+from Elena_Pokalitsina.category.get_category_requests import start_parse
+from Elena_Pokalitsina.category.get_parent_id import get_id
+from Elena_Pokalitsina.category.post_category import post_category
 
 
 def category_main(link, api):

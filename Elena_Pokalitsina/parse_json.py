@@ -49,7 +49,6 @@ def param_parse(site):
                 data_par.append({'Group_id': group_num,
                                  'Param': data_prm})
                 number.append(group_num)
-    # print(data_par)
 
     return data_par
 
@@ -77,8 +76,8 @@ def parse_xml(site):
 
         data_pictures = []
 
-        for image in enumerate(images):
-            data_pictures.append({'src': image[1].text,
+        for image in images:
+            data_pictures.append({'src': image.text,
                                   'alt': name_product})
 
         data_params = []
@@ -107,24 +106,16 @@ def parse_xml(site):
 
 
 def save_json(data):
-    with open('INFO_Product_2.json', 'w', encoding='utf-8') as file:
+    with open('../INFO_Product_2.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
-
-
-def show(file):
-    for i in file.iter('offer'):
-        print(i.findtext('description'))
 
 
 def start():
     url_elena_pokalitsina = 'https://elenapokalitsina.com.ua/index.php?route=extension/feed/yandex_yml&currency=UAH'
-    url_ager = 'https://ager.ua/download/standart_yml_catalog_roznica.xml'
 
-    read = read_xml(urlopen(url_ager).read())
-    show(read)
-
-    # data_collection = parse_xml(read)
-    # save_json(data_collection)
+    read = read_xml(urlopen(url_elena_pokalitsina).read())
+    data_collection = parse_xml(read)
+    save_json(data_collection)
 
 
 if __name__ == '__main__':

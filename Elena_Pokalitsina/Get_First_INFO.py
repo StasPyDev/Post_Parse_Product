@@ -1,13 +1,13 @@
 import json
 
+from Elena_Pokalitsina.simple import simple_main
+from Elena_Pokalitsina.variable import var_main
 from secret.Secret_Key import api_main
-from simple import simple_main
-from variable import var_main
 
 
 # Отримую ID категорії для нового лістингу
 def get_category_info(group_id):
-    with open('INFO_Category.json', encoding='utf-8') as file:
+    with open('../INFO_Category.json', encoding='utf-8') as file:
         files = json.load(file)
 
     for element in files:

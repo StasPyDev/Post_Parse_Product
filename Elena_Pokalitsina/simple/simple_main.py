@@ -1,7 +1,7 @@
 import json
 
-from INFO import product_info
-from list_product import create_listing
+from Elena_Pokalitsina.INFO import product_info
+from Elena_Pokalitsina.list_product import create_listing
 
 
 # Загрузка товару без варіації на сайт

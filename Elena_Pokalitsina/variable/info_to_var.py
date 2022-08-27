@@ -1,4 +1,4 @@
-from INFO import product_info
+from Elena_Pokalitsina.INFO import product_info
 
 
 # Отримання інформації для варіації продукта

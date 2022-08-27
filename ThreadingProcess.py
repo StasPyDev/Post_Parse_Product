@@ -1,6 +1,6 @@
 import threading
 
-from Parse_Ager.Parse_category.Parse_All_Product import get_all_product_links
+from Ager.Parse.Parse_category.Parse_All_Product import get_all_product_links
 
 
 def division_process(core: int, file: str):

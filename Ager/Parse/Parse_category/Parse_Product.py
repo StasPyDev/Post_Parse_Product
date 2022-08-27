@@ -1,15 +1,17 @@
 # Зображення товару
 def get_image(soup):
-    global image_block
+    global span_image_block
     data_image = []
     try:
-        image_block = soup.find('div', class_='product-image vertical_carusel').find_all('span')
+        span_image_block = soup.find('div', class_='product-image vertical_carusel').find_all('span')
     except Exception:
         pass
 
-    for link_img in image_block:
+    for link_img in span_image_block:
         image = link_img.get('data-zoom-image')
-        data_image.append(image)
+        alt = link_img.find('img').get('title')
+        data_image.append({'src': image,
+                           'alt': alt})
 
     return data_image
 
@@ -79,22 +81,20 @@ def params_block(soup):
 # Таблиця з розмірами
 def columns_size(soup):
     try:
-        block_column = soup.find('table', class_='attribute')
+        block_column = soup.find_all('table', class_='attribute')
 
-        return block_column
+        return block_column[-1]
     except Exception as ex:
         print(ex)
 
 
 def start_parse_page_prd(soup, url):
-    # data = {}
     links_image = get_image(soup=soup)
     name, category, model_id = get_name_and_category(soup=soup)
     group_id, quantity, price, size_params = price_block(soup=soup)
     params, description = params_block(soup=soup)
     block_column_size = columns_size(soup=soup)
     data = {
-        # 'Available': available,
         'Group_id': group_id,
         'URL': url,
         'Price': price[0].split()[0],

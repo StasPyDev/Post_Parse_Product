@@ -9,7 +9,7 @@ options.add_argument('--headless')
 
 def get_name_category(link):
     driver = webdriver.Chrome(
-        executable_path='C:\\Users\\Stas2\\PycharmProjects\\Product_ElenaPokalitsina\\category\\chromedriver\\chromedriver.exe',
+        executable_path='/Elena_Pokalitsina/category/chromedriver/chromedriver.exe',
         options=options)
 
     driver.get(url=link)

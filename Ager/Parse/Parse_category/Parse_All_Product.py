@@ -1,5 +1,5 @@
-from Parse_Ager.Parse_category.Parse_Product import start_parse_page_prd
-from Parse_Ager.Parse_category.Requests_page.html_page import get_page
+from Ager.Parse.Parse_category.Parse_Product import start_parse_page_prd
+from Ager.Parse.Parse_category.Requests_page.html_page import get_page
 
 
 # Отримання кількість сторінок в категорії
@@ -12,7 +12,7 @@ def get_numeration(soup):
 # Створення силок на всі сторінки з данної категорії
 def pagination_page(counts_page, url):
     data_urls = []
-    for count in range(counts_page):
+    for count in range(1):
         create_url = f'{url}page-{count + 1}'
         data_urls.append(create_url)
     return data_urls
