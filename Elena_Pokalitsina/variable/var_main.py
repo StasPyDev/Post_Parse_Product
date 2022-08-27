@@ -17,12 +17,10 @@ def post_var_product(number, api, type, count, category_info):
         else:
             parent_product_id = new_product.get('id')
             for id_var, var_param in enumerate(info_to_var.get_info_to_variation(list_group_id=number)):
-                option = var_param.get('Options')
-                stock_status = var_param.get('stock_status')
                 data = {
                     'regular_price': info_to_product.get('Price'),
-                    'attributes': option,
-                    'stock_status': stock_status
+                    'attributes': [var_param.get('Options')],
+                    'stock_status': var_param.get('stock_status')
                 }
 
                 new_variable = api.post(f'products/{parent_product_id}/variations', data).json()
