@@ -7,7 +7,7 @@ from secret.Secret_Key import api_main
 
 # Отримую ID категорії для нового лістингу
 def get_category_info(group_id):
-    with open('../INFO_Category.json', encoding='utf-8') as file:
+    with open('INFO_Category.json', encoding='utf-8') as file:
         files = json.load(file)
 
     for element in files:

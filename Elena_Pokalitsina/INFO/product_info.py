@@ -3,7 +3,7 @@ import json
 
 # Інформація про всі товари
 def get_file():
-    with open('INFO_Product_Ager.json', 'r', encoding='utf-8') as file:
+    with open('INFO_Product_2.json', 'r', encoding='utf-8') as file:
         files = json.load(file)
 
     return files
