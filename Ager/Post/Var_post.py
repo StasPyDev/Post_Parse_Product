@@ -19,6 +19,5 @@ def post_variable(info, api):
                 }
 
                 new_variable = api.post(f'products/{parent_product_id}/variations', data).json()
-
     except json.JSONDecodeError as err:
         print(err)
