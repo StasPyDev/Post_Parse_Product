@@ -6,7 +6,7 @@ def get_product_to_update():
     api = api_main()
     page = 1
     for i in range(page):
-        all_products = api.get('products/', params={f'search': 'Лофери 11957-2'}).json()
+        all_products = api.get('products/', params={'page': f'{i + 1}'}).json()
         for product in all_products:
             product_id = product['id']
             category_group = product.get('categories')[0]
