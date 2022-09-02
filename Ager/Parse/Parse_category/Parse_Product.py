@@ -18,13 +18,16 @@ def get_image(soup):
 
 # Назва товару та категорії
 def get_name_and_category(soup):
-    global model_id, get_name
+    global model_id, get_name, get_category
     try:
         get_name = soup.find('h1', class_='h1_product').get_text()
         model_id = get_name.split()[-1]
     except Exception:
         pass
-    get_category = soup.find('ul', class_='breadcrumb_ager').find_all('li')
+    try:
+        get_category = soup.find('ul', class_='breadcrumb_ager').find_all('li')
+    except Exception:
+        pass
 
     name_category = [name.get_text().strip() for name in get_category]
     name_category.pop(0)
@@ -34,12 +37,15 @@ def get_name_and_category(soup):
 
 # Ціна, первинні параметри товару
 def price_block(soup):
-    global param_size
+    global param_size, available
     model = soup.find('div', class_='description').find('div', class_='description_items')
     group_id = model.find('strong').get_text()
     quantity = [quan.get_text().strip() for quan in model][-1]
     try:
         available = model.find('b', class_='text-danger').get_text()
+    except Exception:
+        pass
+    try:
         block_param = soup.find('div', class_='select-size').find_all('span')
         param_size = [param.get_text().strip() for param in block_param]
     except Exception:
@@ -47,7 +53,7 @@ def price_block(soup):
 
     block_price = soup.find('div', class_='price').find_all('span')
     price = [price.get_text().strip() for price in block_price]
-    return group_id, quantity, price, param_size, available
+    return group_id, quantity, price, param_size
 
 
 # Додаткова інформація про товар
@@ -92,12 +98,12 @@ def columns_size(soup):
 def start_parse_page_prd(soup, url):
     links_image = get_image(soup=soup)
     name, category, model_id = get_name_and_category(soup=soup)
-    group_id, quantity, price, size_params, available = price_block(soup=soup)
+    group_id, quantity, price, size_params = price_block(soup=soup)
     params, description = params_block(soup=soup)
     block_column_size = columns_size(soup=soup)
     data = {
         'Group_id': group_id,
-        'Available': available,
+        # 'Available': available,
         'URL': url,
         'Price': price[0].split()[0],
         'Title': name,

@@ -40,6 +40,6 @@ def start_parse_info(soup, url):
         soup_product = get_page(url=product_link)
         product_soup = start_parse_page_prd(soup=soup_product, url=product_link)
         data.append(product_soup)
-        # if id % 100 == 0:
-        print(f'---Product-{id} to {len(product_links)} done!---')
+        if id % 100 == 0:
+            print(f'---Product-{id} to {len(product_links)} done!---')
     return data
