@@ -41,7 +41,7 @@ def distribution(category, api):
             return search_category(name_category='жіночі блузки', api=api)
         #
         case ('брюки'):
-            return search_category(name_category=category, api=api)
+            return search_category(name_category='брюки', api=api)
         # Жіночі джинси
         case ('джинси' | 'джинси бойфренди' | 'джинси мом' | 'джинси mom' | 'жіночі джинси'):
             return search_category(name_category='жіночі джинси', api=api)
@@ -55,7 +55,7 @@ def distribution(category, api):
         case ('комбінезони' | 'жіночі Комбінезони'):
             return search_category(name_category='жіночі Комбінезони', api=api)
         # Жіночі костюми
-        case ('костюми' | 'брючні костюми' | "в'язані костюми" | 'костюм з шортами' | 'костюми зі спідницею' | 'жіночі костюми'):
+        case ('костюми' | 'костюми, комбінезони' | 'брючні костюми' | "в'язані костюми" | 'костюм з шортами' | 'костюми зі спідницею' | 'жіночі костюми'):
             return search_category(name_category='жіночі костюми', api=api)
         # Жіночі лосини
         case ('жіночі легінси'):
@@ -69,9 +69,9 @@ def distribution(category, api):
         # Жіночі поло
         case ('поло' | 'жіночі поло'):
             return search_category(name_category='жіночі поло', api=api)
-        #
+        # пляжні накидки
         case ('пляжні накидки'):
-            return search_category(name_category=category, api=api)
+            return search_category(name_category='пляжні накидки', api=api)
         # Жіночі сарафани
         case ('сарафани' | 'жіночі сарафани'):
             return search_category(name_category='жіночі сарафани', api=api)
@@ -99,7 +99,7 @@ def distribution(category, api):
         case ('спідниці' | 'жіночі спідниці'):
             return search_category(name_category='жіночі спідниці', api=api)
         # Жіночі сукні
-        case ('сукні' | 'новорічні сукні' | 'плаття на корпоратив' | 'жіночі сукні'):
+        case ('сукні' | 'новорічні сукні' | 'плаття на корпоратив' | 'жіночі сукні' | 'плаття'):
             return search_category(name_category='жіночі сукні', api=api)
         # Жіночі топи
         case ('топи' | 'жіночі топи'):
@@ -129,5 +129,35 @@ def distribution(category, api):
             return search_category(name_category='жіночі шкіряні куртки', api=api)
         case ('жіночі шуби' | 'шуби'):
             return search_category(name_category='жіночі шуби', api=api)
-        case ('плащі й тренчи' | 'жіночі зимові куртки' | 'жіночі плащі'):
+        case ('плащі й тренчи' | 'жіночі зимові куртки' | 'жіночі плащі' | 'верхній одяг'):
             return search_category(name_category='жіночі зимові куртки', api=api)
+
+        # Дитячий одяг
+        case ('дитячі сукні'):
+            return search_category(name_category='дитячі сукні', api=api)
+        case ('дитячі сорочки, блузи'):
+            return search_category(name_category='дитячі сорочки, блузи', api=api)
+        case ('дитячі костюми'):
+            return search_category(name_category='дитячі костюми', api=api)
+        case ('дитячі пальто, жилети'):
+            return search_category(name_category='дитячі пальто, жилети', api=api)
+
+        # Family look
+        case ('family look' | 'дитячий одяг по 99 грн' | 'дитячий одяг по 199 грн' | 'дитячий одяг по 699 грн'):
+            return search_category(name_category='family look', api=api)
+
+        # Аксесуари
+        case('біжутерія'):
+            return search_category(name_category='біжутерія', api=api)
+        case ('жіночі сумки' | 'аксесуари'):
+            return search_category(name_category='жіночі сумки', api=api)
+
+        # Взуття
+        case('сапоги'):
+            return search_category(name_category='сапоги', api=api)
+        case ('черевики'):
+            return search_category(name_category='черевики', api=api)
+        case ('лофери'):
+            return search_category(name_category='лофери', api=api)
+        case ('кеди'):
+            return search_category(name_category='кеди', api=api)

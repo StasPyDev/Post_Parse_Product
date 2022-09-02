@@ -1,3 +1,5 @@
+import json
+
 from Elena_Pokalitsina.First_stage import read_file, post_product, create_category
 from Elena_Pokalitsina.Update.Get_product_to_update import get_product_to_update
 
@@ -13,3 +15,16 @@ def ep_main():
         create_category(file=files)
     elif second_select == 3:
         get_product_to_update()
+    else:
+        files = read_file(file_name='INFO_Category.json')
+        get_all_category(file=files)
+
+
+def get_all_category(file):
+    data = []
+    for name in file:
+        if name['Category_name'].lower() not in data:
+            data.append(name['Category_name'].lower())
+
+    with open('INFO_Category_EP.json', 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)

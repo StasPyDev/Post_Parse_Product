@@ -6,12 +6,18 @@ def get_product_to_update():
     api = api_main()
     page = 1
     for i in range(page):
-        all_products = api.get('products/', params={f'page': {i + 1}}).json()
+        all_products = api.get('products/', params={f'search': 'Лофери 11957-2'}).json()
         for product in all_products:
             product_id = product['id']
-            print(product_id)
             category_group = product.get('categories')[0]
             category = category_group.get('name')
-            update_to_id(product_id=product_id, category=category)
+
+            if category == 'Взуття':
+                title = product['name'].split()
+                for element in title:
+                    if element in ('Лофери', 'Сапоги', 'Черевики', 'Кеди'):
+                        update_to_id(product_id=product_id, category=element)
+            else:
+                update_to_id(product_id=product_id, category=category)
     page += 1
 
