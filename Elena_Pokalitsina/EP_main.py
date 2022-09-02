@@ -5,7 +5,7 @@ from Elena_Pokalitsina.Update.Get_product_to_update import get_product_to_update
 
 
 def ep_main():
-    second_select = int(input('Choose an action: \n1. Post\n2. Create category\n3. Update category\n'))
+    second_select = int(input('Choose an action: \n1. Post\n2. Create category\n3. Update category\n4. Get all categories in file\n'))
     file = 'INFO_Product_2.json'
     if second_select == 1:
         files = read_file(file_name=file)

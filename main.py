@@ -4,7 +4,7 @@ from Elena_Pokalitsina.EP_main import ep_main
 
 
 def main():
-    print('ver. 1.4')
+    print('ver. 1.52')
     select = int(input('Select what are you do:\n1. Elena Pokalitsina\n2. Ager\n'))
     if select == 1:
         ep_main()
