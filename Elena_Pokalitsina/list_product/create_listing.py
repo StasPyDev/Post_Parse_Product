@@ -14,7 +14,7 @@ def new_listing(api, type, info, number, category_info):
         'regular_price': info.get('Price'),
         'description': info.get('Description'),
         'images': info.get('Image'),
-        'categories': [{'id': category_info.get('Category_id')}],
+        'categories': [{'id': category_info['Category_id']}],
         'tags': [{'name': category_info.get('Category_name')}],
         'attributes': [{
             "name": 'Розмір',

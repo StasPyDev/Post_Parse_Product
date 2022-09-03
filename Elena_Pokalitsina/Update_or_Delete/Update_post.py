@@ -9,4 +9,3 @@ def update_to_id(product_id, category):
         'categories': [{'id': f'{category_id}'}]
     }
     put = api.put(f"products/{product_id}", data).json()
-    print(f'{put["id"]} - {put["name"]}')

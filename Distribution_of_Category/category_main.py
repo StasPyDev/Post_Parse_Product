@@ -84,7 +84,7 @@ def distribution(category, api):
             return search_category(name_category='жіночі водолазки, гольфи', api=api)
         case ('жіночі джемпери'):
             return search_category(name_category='жіночі джемпери', api=api)
-        case ('жіночі кофти'):
+        case ('жіночі кофти' | 'кофти'):
             return search_category(name_category='жіночі кофти', api=api)
         case ('жіночі толстовки'):
             return search_category(name_category='жіночі толстовки', api=api)
