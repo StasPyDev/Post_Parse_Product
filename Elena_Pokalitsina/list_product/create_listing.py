@@ -1,5 +1,5 @@
-from Ager.Post.SEO import get_seo_product
 from Elena_Pokalitsina.INFO import product_info
+from Elena_Pokalitsina.SEO.Get_SEO import get_seo_product
 
 
 # Загрузка товару на сайт(не варіації товару)
