@@ -19,12 +19,12 @@ def post_var_product(number, api, type, count, category_info):
             for id_var, var_param in enumerate(info_to_var.get_info_to_variation(list_group_id=number)):
                 data = {
                     'regular_price': info_to_product.get('Price'),
-                    'attributes': [var_param.get('Options')],
+                    'attributes': var_param.get('Options'),
                     'stock_status': var_param.get('stock_status')
                 }
 
                 new_variable = api.post(f'products/{parent_product_id}/variations', data).json()
-                print(f'-{id_var + 1}-{count}-{new_variable}')
+                print(f'-{id_var + 1}-{count}')
             print('Variable product is DONE!!!!')
 
     except json.JSONDecodeError as err:

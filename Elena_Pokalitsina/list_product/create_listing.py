@@ -1,3 +1,4 @@
+from Ager.Post.SEO import get_seo_product
 from Elena_Pokalitsina.INFO import product_info
 
 
@@ -15,7 +16,7 @@ def new_listing(api, type, info, number, category_info):
         'description': info.get('Description'),
         'images': info.get('Image'),
         'categories': [{'id': category_info['Category_id']}],
-        'tags': [{'name': category_info.get('Category_name')}],
+        'tags': [{'name': category_info['Category_name']}],
         'attributes': [{
             "name": 'Розмір',
             "visible": "true",
@@ -32,7 +33,8 @@ def new_listing(api, type, info, number, category_info):
                 "name": "Виробник",
                 "visible": "true",
                 "options": [info.get("Vendor")]
-            }]
+            }],
+        'meta_data': get_seo_product(info=info, category_info=category_info)
     }
     r = api.post('products', data).json()
     return r

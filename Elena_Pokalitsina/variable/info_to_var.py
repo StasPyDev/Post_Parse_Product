@@ -18,8 +18,8 @@ def get_info_to_variation(list_group_id):
             for param in file.get('Params'):
                 name = param.get('Name')
                 option = param.get('Option')
-                add_data.append({'name': name,
-                                 'option': option})
+                add_data.append({"name": f"{name}",
+                                 "option": f"{option}"})
 
         else:
             continue

@@ -2,11 +2,13 @@ import json
 
 from Elena_Pokalitsina.First_stage import read_file, post_product, create_category
 from Elena_Pokalitsina.Update_or_Delete.Get_product_to_update import get_product_to_update_or_delete
+from Elena_Pokalitsina.parse_json import start
 
 
 def ep_main():
     second_select = int(input('Choose an action: \n1. Post\n2. Create category\n3. Update_or_Delete category\n'
-                              '4. Get all categories in file\n5. Delete all products\n'))
+                              '4. Get all categories in file\n5. Delete all products\n'
+                              '6. Parse XML file products\n'))
     file = 'INFO_Product_2.json'
     if second_select == 1:
         files = read_file(file_name=file)
@@ -21,6 +23,8 @@ def ep_main():
         get_all_category(file=files)
     elif second_select == 5:
         get_product_to_update_or_delete(update_or_delete=second_select)
+    elif second_select == 6:
+        start()
 
 
 def get_all_category(file):

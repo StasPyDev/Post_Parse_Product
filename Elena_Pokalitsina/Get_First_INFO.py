@@ -1,6 +1,5 @@
 import json
 
-from Distribution_of_Category.category_main import distribution
 from Elena_Pokalitsina.simple import simple_main
 from Elena_Pokalitsina.variable import var_main
 from secret.Secret_Key import api_main
@@ -8,13 +7,13 @@ from secret.Secret_Key import api_main
 
 # Отримую ID категорії для нового лістингу
 def get_category_info(group_id):
-    with open('INFO_Category.json', encoding='utf-8') as file:
+    with open('INFO_Category_EP.json', encoding='utf-8') as file:
         files = json.load(file)
 
     for element in files:
         if element.get('Group_id') == group_id:
-            category_id = distribution(category=element['Category_name'], api=api_main())
-            return {'Category_id': category_id, 'Category_name': element['Category_name']}
+            # category_id = distribution(category=element['Category_name'], api=api_main())
+            return {'Category_id': element['Category_id'], 'Category_name': element['Category_name']}
 
 
 # Відправляє данні на лістинг нового товару

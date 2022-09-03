@@ -106,7 +106,7 @@ def parse_xml(site):
 
 
 def save_json(data):
-    with open('../INFO_Product_2.json', 'w', encoding='utf-8') as file:
+    with open('INFO_Product_EP.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 
@@ -117,6 +117,3 @@ def start():
     data_collection = parse_xml(read)
     save_json(data_collection)
 
-
-if __name__ == '__main__':
-    start()

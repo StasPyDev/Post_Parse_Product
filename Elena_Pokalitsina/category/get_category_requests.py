@@ -14,19 +14,21 @@ def get_parse_page_to_category(html):
     soup = BeautifulSoup(html, 'lxml')
 
     block_category = soup.find('ul', class_='breadcrumb')
-    li_categorys = block_category.find_all('li')
+    li_categories = block_category.find_all('li')
     all_li_category = []
-    for li in li_categorys:
+    for li in li_categories:
         text_category = li.text.strip()
         all_li_category.append(text_category)
 
     all_li_category.pop(0)
     all_li_category.pop(-1)
-
-    return all_li_category
+    category = ''
+    for category in all_li_category:
+        category = category
+    return category
 
 
 def start_parse(link):
     html = get_html(link=link)
-    bs = get_parse_page_to_category(html=html)
-    return bs
+    category_name = get_parse_page_to_category(html=html)
+    return category_name

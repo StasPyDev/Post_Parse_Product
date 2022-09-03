@@ -13,18 +13,18 @@ def create_category(file):
         link_product = link.get('URL')
         group_id = link.get('Group_id')
         if group_id not in data_links:
-            category_new_post, category_id = category_main(link=link_product, api=api)
+            category_name, category_id = category_main(link=link_product, api=api)
             data_links.append(group_id)
             data.append({
                 'Group_id': group_id,
                 'Category_id': category_id,
-                'Category_name': category_new_post
+                'Category_name': category_name
             })
         else:
             continue
-        print(f'Number {group_id} is DONE!')
+    print(f'Number is DONE!')
 
-    with open('INFO_Category_requests.json', 'w', encoding='utf-8') as file:
+    with open('INFO_Category_EP.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 
