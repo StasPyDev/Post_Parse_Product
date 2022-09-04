@@ -1,9 +1,6 @@
-from Elena_Pokalitsina.INFO import product_info
-
-
 # Отримання інформації для варіації продукта
-def get_info_to_variation(list_group_id):
-    files = product_info.get_file()
+def get_info_to_variation(list_group_id, files):
+    # files = product_info.get_file()
 
     data = []
 

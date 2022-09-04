@@ -105,15 +105,15 @@ def parse_xml(site):
     return data
 
 
-def save_json(data):
-    with open('INFO_Product_EP.json', 'w', encoding='utf-8') as file:
+def save_json(file_name, data):
+    with open(file_name, 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 
-def start():
+def start(file_name):
     url_elena_pokalitsina = 'https://elenapokalitsina.com.ua/index.php?route=extension/feed/yandex_yml&currency=UAH'
 
     read = read_xml(urlopen(url_elena_pokalitsina).read())
     data_collection = parse_xml(read)
-    save_json(data_collection)
+    save_json(file_name=file_name, data=data_collection)
 

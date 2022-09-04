@@ -3,8 +3,8 @@ from Elena_Pokalitsina.SEO.Get_SEO import get_seo_product
 
 
 # Загрузка товару на сайт(не варіації товару)
-def new_listing(api, type, info, number, category_info):
-    options = product_info.options_to_product(number)
+def new_listing(api, type, info, number, category_info, file):
+    options = product_info.options_to_product(number, file)
     var_size = [x.get('option_size') for x in options]
     var_color = [x.get('option_color') for x in options]
 

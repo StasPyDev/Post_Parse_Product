@@ -6,8 +6,8 @@ from secret.Secret_Key import api_main
 
 
 # Отримую ID категорії для нового лістингу
-def get_category_info(group_id):
-    with open('INFO_Category_EP.json', encoding='utf-8') as file:
+def get_category_info(file_name, group_id):
+    with open(file_name, encoding='utf-8') as file:
         files = json.load(file)
 
     for element in files:
@@ -17,19 +17,20 @@ def get_category_info(group_id):
 
 
 # Відправляє данні на лістинг нового товару
-def post(number, api):
+def post(file_name, file, number, api):
     group_id = number.get('Group_id')
     number_count = number.get('Count')
-    category_info = get_category_info(group_id=group_id)
+    category_info = get_category_info(file_name=file_name, group_id=group_id)
     # Перевірка на ТИП товару
     if number_count >= 2:
         type = 'variable'
-        var_main.post_var_product(number=group_id, api=api, type=type, count=number_count, category_info=category_info)
+        var_main.post_var_product(number=group_id, api=api, type=type, count=number_count, category_info=category_info,
+                                  file=file)
     else:
         type = 'simple'
-        simple_main.post_simple_product(number=group_id, api=api, type=type, category_info=category_info)
+        simple_main.post_simple_product(number=group_id, api=api, type=type, category_info=category_info, file=file)
 
 
-def main_post(number):
+def main_post(number, file_name, file):
     api = api_main()
-    post(number=number, api=api)
+    post(file_name=file_name, file=file, number=number, api=api)

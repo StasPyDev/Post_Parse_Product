@@ -9,22 +9,22 @@ def ep_main():
     second_select = int(input('Choose an action: \n1. Post\n2. Create category\n3. Update_or_Delete category\n'
                               '4. Get all categories in file\n5. Delete all products\n'
                               '6. Parse XML file products\n'))
-    file = 'INFO_Product_2.json'
+    file = 'INFO_Product_EP.json'
     if second_select == 1:
         files = read_file(file_name=file)
-        post_product(file=files)
+        post_product(file=files, file_name='INFO_Category_EP.json')
     elif second_select == 2:
         files = read_file(file_name=file)
-        create_category(file=files)
+        create_category(file=files, save_file='INFO_Category_EP.json')
     elif second_select == 3:
         get_product_to_update_or_delete(update_or_delete=second_select)
     elif second_select == 4:
-        files = read_file(file_name='INFO_Category.json')
+        files = read_file(file_name='INFO_Category_EP.json')
         get_all_category(file=files)
     elif second_select == 5:
         get_product_to_update_or_delete(update_or_delete=second_select)
     elif second_select == 6:
-        start()
+        start(file_name=file)
 
 
 def get_all_category(file):

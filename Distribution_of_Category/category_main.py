@@ -152,7 +152,17 @@ def distribution(category, api):
         case ('жіночі сумки' | 'аксесуари'):
             return search_category(name_category='жіночі сумки', api=api)
 
-        # Взуття
+        # Взуття жіноче
+        case('сапоги'):
+            return search_category(name_category='сапоги', api=api)
+        case ('черевики'):
+            return search_category(name_category='черевики', api=api)
+        case ('лофери'):
+            return search_category(name_category='лофери', api=api)
+        case ('кеди'):
+            return search_category(name_category='кеди', api=api)
+
+        # Взуття чоловіче
         case('сапоги'):
             return search_category(name_category='сапоги', api=api)
         case ('черевики'):
