@@ -37,10 +37,13 @@ def get_name_and_category(soup):
 
 # Ціна, первинні параметри товару
 def price_block(soup):
-    global param_size, available
-    model = soup.find('div', class_='description').find('div', class_='description_items')
-    group_id = model.find('strong').get_text()
-    quantity = [quan.get_text().strip() for quan in model][-1]
+    global param_size, available, group_id, quantity
+    try:
+        model = soup.find('div', class_='description').find('div', class_='description_items')
+        group_id = model.find('strong').get_text()
+        quantity = [quan.get_text().strip() for quan in model][-1]
+    except Exception:
+        pass
     try:
         available = model.find('b', class_='text-danger').get_text()
     except Exception:

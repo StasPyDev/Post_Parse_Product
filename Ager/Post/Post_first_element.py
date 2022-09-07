@@ -12,7 +12,7 @@ def first_element(info, api):
         'regular_price': info.get('Price'),
         'description': f"{'' if info.get('Description') == 'None' else info.get('Description')}\n{info.get('Block_size')}",
         'images': info.get('Images'),
-        'categories': [{'id': distribution(category=info.get('Category')[-1], api=api)}],
+        'categories': [{'id': distribution(category=info.get('Category'), api=api)}],
         'tags': [{'name': info.get('Category')[-1]}],
         'attributes': get_attribute_param(info=info),
         'meta_data': get_seo_product(info=info)

@@ -10,6 +10,5 @@ def post_simple_product(number, api, type, category_info, file):
         info_to_product = product_info.get_product_info(number=number, file=file)
         create_listing.new_listing(api=api, type=type, info=info_to_product, number=number,
                                    category_info=category_info, file=file)
-        print('Simple product is DONE!!!')
     except json.JSONDecodeError as err:
         print(err)

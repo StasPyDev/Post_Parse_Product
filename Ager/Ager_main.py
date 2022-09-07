@@ -1,6 +1,6 @@
 import json
 
-from Ager.Parse.Parse_category.main_ager import start_parse
+from Ager.Parse.Parse_category.Parse_Main_Ager import start_parse
 from Ager.Post.Post_main_Ager import open_file
 from Ager.Post.Post_main_Ager import post_product
 from secret.Secret_Key import api_main

@@ -2,6 +2,8 @@ from Distribution_of_Category.search_category_id import search_category
 
 
 def distribution(category, api):
+    for categorie in category:
+        category = categorie
     category = category.lower()
     match category:
         # Жіноча білизна

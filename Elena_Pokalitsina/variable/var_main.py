@@ -24,9 +24,7 @@ def post_var_product(number, api, type, count, category_info, file):
                     'stock_status': var_param.get('stock_status')
                 }
 
-                new_variable = api.post(f'products/{parent_product_id}/variations', data).json()
-                print(f'-{id_var + 1}-{count}')
-            print('Variable product is DONE!!!!')
+                api.post(f'products/{parent_product_id}/variations', data).json()
 
     except json.JSONDecodeError as err:
         print(err)

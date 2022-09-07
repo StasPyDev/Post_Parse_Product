@@ -12,7 +12,7 @@ def get_numeration(soup):
 # Створення силок на всі сторінки з данної категорії
 def pagination_page(counts_page, url):
     data_urls = []
-    for count in range(1):
+    for count in range(counts_page):
         create_url = f'{url}page-{count + 1}'
         data_urls.append(create_url)
     return data_urls

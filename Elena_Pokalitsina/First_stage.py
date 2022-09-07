@@ -24,7 +24,7 @@ def create_category(file, save_file):
             })
         else:
             continue
-    print(f'Number is DONE!')
+    print(f'Parse is DONE!')
     save_to_file(file_name=save_file, data=data)
 
 
@@ -56,7 +56,9 @@ def post_product(file, file_name):
         count = 0
 
     for id_count, number in enumerate(data):
+        # get_post_product = api_main().get('products/', params=('search': ))
         main_post(number=number, file_name=file_name, file=file)
+        print(f'Ready {id_count + 1}')
         if id_count % 100 == 0:
             time.sleep(10)
 

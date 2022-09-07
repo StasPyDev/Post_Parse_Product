@@ -13,5 +13,6 @@ def open_file(file):
 def post_product(file, api):
     files_info = open_file(file=file)
 
-    for file_info in files_info:
+    for id_product, file_info in enumerate(files_info):
         post(info=file_info, api=api)
+        print(f'--{id_product + 1}-- is {len(files_info)} Done!')

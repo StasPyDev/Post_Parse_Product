@@ -8,8 +8,8 @@ def category_main(link, title, api):
     if data_category == 'Взуття':
         title = title.split()
         for element in title:
-            if element in ('Лофери', 'Сапоги', 'Черевики', 'Кеди'):
-                category_id = distribution(category=data_category, api=api)
+            if element.lower() in ('лофери', 'сапоги', 'черевики', 'кеди'):
+                category_id = distribution(category=element.lower(), api=api)
     else:
         category_id = distribution(category=data_category, api=api)
 
