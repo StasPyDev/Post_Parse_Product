@@ -8,7 +8,7 @@ def post_variable(info, api):
         post_new_product = first_element(info=info, api=api)
         parent_product_id = post_new_product.get('id')
         info_product = post_new_product.get('message')
-        if info_product == 'Неверный или дублированный артикул.':
+        if info_product in ('Неверный или дублированный артикул.', 'Неверный параметр: categories'):
             pass
         else:
             for size in info.get('Size_Params'):
